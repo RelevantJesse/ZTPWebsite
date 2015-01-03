@@ -1,0 +1,10 @@
+Z:\users\jprescott\documents\visual studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\bin\ZeroToProgrammer.dll.config
+Z:\users\jprescott\documents\visual studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\bin\ZeroToProgrammer.dll
+Z:\users\jprescott\documents\visual studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\bin\ZeroToProgrammer.pdb
+Z:\users\jprescott\documents\visual studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\obj\Debug\ZeroToProgrammer.dll
+Z:\users\jprescott\documents\visual studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\obj\Debug\ZeroToProgrammer.pdb
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\bin\BCrypt.Net.dll
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\bin\BCrypt.Net.pdb
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\bin\BCrypt.Net.xml
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\bin\Newtonsoft.Json.dll
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\bin\Newtonsoft.Json.xml
