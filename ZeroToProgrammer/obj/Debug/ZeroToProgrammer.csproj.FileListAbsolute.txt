@@ -8,3 +8,14 @@ Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZeroToProgrammer\ZeroTo
 Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\bin\BCrypt.Net.xml
 Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\bin\Newtonsoft.Json.dll
 Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZeroToProgrammer\ZeroToProgrammer\bin\Newtonsoft.Json.xml
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZTPWebsite\ZeroToProgrammer\bin\ZeroToProgrammer.dll.config
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZTPWebsite\ZeroToProgrammer\bin\ZeroToProgrammer.dll
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZTPWebsite\ZeroToProgrammer\bin\ZeroToProgrammer.pdb
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZTPWebsite\ZeroToProgrammer\bin\BCrypt.Net.dll
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZTPWebsite\ZeroToProgrammer\bin\Newtonsoft.Json.dll
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZTPWebsite\ZeroToProgrammer\bin\BCrypt.Net.pdb
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZTPWebsite\ZeroToProgrammer\bin\BCrypt.Net.xml
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZTPWebsite\ZeroToProgrammer\bin\Newtonsoft.Json.xml
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZTPWebsite\ZeroToProgrammer\obj\Debug\ZeroToProgrammer.csprojResolveAssemblyReference.cache
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZTPWebsite\ZeroToProgrammer\obj\Debug\ZeroToProgrammer.dll
+Z:\Users\jprescott\Documents\Visual Studio 2013\Projects\ZTPWebsite\ZeroToProgrammer\obj\Debug\ZeroToProgrammer.pdb

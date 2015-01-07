@@ -2,6 +2,7 @@
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace ZeroToProgrammer
@@ -10,19 +11,33 @@ namespace ZeroToProgrammer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblError.Visible = false;
-            lblSuccess.Visible = false;
+            divError.Visible = false;
+            divSuccess.Visible = false;
 
-            if (HttpContext.Current.User.Identity.Name != null)
+            if (!string.IsNullOrWhiteSpace(HttpContext.Current.User.Identity.Name))
             {
-                Label lblUser = new Label();
-                lblUser.Text = HttpContext.Current.User.Identity.Name;
-                divUserInfo.Controls.Add(lblUser);
+                HtmlGenericControl li = new HtmlGenericControl("li");
+                HtmlAnchor a = new HtmlAnchor();
+                a.HRef = "#";
+                a.InnerHtml = HttpContext.Current.User.Identity.Name;
+                li.Controls.Add(a);
+                ulUserInfo.Controls.Add(li);
 
-                LinkButton lnkLogout = new LinkButton();
-                lnkLogout.Text = "Logout";
-                lnkLogout.Click += Logout;
-                divUserInfo.Controls.Add(lnkLogout);
+                li = new HtmlGenericControl("li");
+                HtmlButton btnLogout = new HtmlButton();
+                btnLogout.Attributes.Add("class", "btn btn-default navbar-btn");
+                btnLogout.InnerHtml = "Logout";
+                btnLogout.ServerClick += Logout;
+                li.Controls.Add(btnLogout);
+                ulUserInfo.Controls.Add(li);
+
+                ulLoginInfo.Visible = false;
+                ulUserInfo.Visible = true;
+            }
+            else
+            {
+                ulLoginInfo.Visible = true;
+                ulUserInfo.Visible = false;
             }
             
         }
@@ -41,18 +56,20 @@ namespace ZeroToProgrammer
             HttpCookie cookie2 = new HttpCookie("ASP.NET_SessionId", "");
             cookie2.Expires = DateTime.Now.AddYears(-1);
             Response.Cookies.Add(cookie2);
+
+            Response.Redirect("Login.aspx");
         }
 
         public void SetError(string text)
         {
             lblError.Text = text;
-            lblError.Visible = true;
+            divError.Visible = true;
         }
 
         public void SetSuccess(string text)
         {
             lblSuccess.Text = text;
-            lblSuccess.Visible = true;
+            divSuccess.Visible = true;
         }
     }
 }

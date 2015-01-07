@@ -47,11 +47,11 @@ namespace ZeroToProgrammer
         private void ResetPage()
         {
             // Reset Colors
-            lblUsername.ForeColor = System.Drawing.Color.Black;
-            lblPassword.ForeColor = System.Drawing.Color.Black;
-            lblEmail.ForeColor = System.Drawing.Color.Black;
-            lblFirstName.ForeColor = System.Drawing.Color.Black;
-            lblLastName.ForeColor = System.Drawing.Color.Black;
+            divUsername.Attributes["class"] = "form-group";
+            divPassword.Attributes["class"] = "form-group";
+            divFirstName.Attributes["class"] = "form-group";
+            divLastName.Attributes["class"] = "form-group";
+            divEmail.Attributes["class"] = "form-group";
         }
 
         private bool AreFieldsValid()
@@ -62,21 +62,21 @@ namespace ZeroToProgrammer
             if (string.IsNullOrWhiteSpace(txtUsername.Text))
             {
                 MasterPage.SetError("Please enter a User Name");
-                lblUsername.ForeColor = System.Drawing.Color.Red;
+                divUsername.Attributes["class"] = "form-group has-error";
                 return false;
             }
 
             if (txtUsername.Text.Length < 6)
             {
                 MasterPage.SetError("User Name must be at least 6 characters");
-                lblUsername.ForeColor = System.Drawing.Color.Red;
+                divUsername.Attributes["class"] = "form-group has-error";
                 return false;
             }
 
             if (rgxUsrName.IsMatch(txtUsername.Text))
             {
                 MasterPage.SetError("User Name must be alphanumeric");
-                lblUsername.ForeColor = System.Drawing.Color.Red;
+                divUsername.Attributes["class"] = "form-group has-error";
                 return false;
             }
 
@@ -85,7 +85,7 @@ namespace ZeroToProgrammer
                 if (UsersTable.UserExists(txtUsername.Text))
                 {
                     MasterPage.SetError("This Username or Email address already exists");
-                    lblUsername.ForeColor = System.Drawing.Color.Red;
+                    divUsername.Attributes["class"] = "form-group has-error";
                     return false;
                 }
             }
@@ -99,14 +99,14 @@ namespace ZeroToProgrammer
             if (string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 MasterPage.SetError("Please enter a Password");
-                lblPassword.ForeColor = System.Drawing.Color.Red;
+                divPassword.Attributes["class"] = "form-group has-error";
                 return false;
             }
 
             if (txtPassword.Text.Length < 8)
             {
                 MasterPage.SetError("Password must be at least 8 characters");
-                lblPassword.ForeColor = System.Drawing.Color.Red;
+                divPassword.Attributes["class"] = "form-group has-error";
                 return false;
             }
 
@@ -116,7 +116,7 @@ namespace ZeroToProgrammer
                || txtPassword.Text.Any(char.IsPunctuation))))
             {
                 MasterPage.SetError("Password must contain at least one letter, one number, and one symbol");
-                lblPassword.ForeColor = System.Drawing.Color.Red;
+                divPassword.Attributes["class"] = "form-group has-error";
                 return false;
             }
 
@@ -128,7 +128,7 @@ namespace ZeroToProgrammer
             catch
             {
                 MasterPage.SetError("Invalid Email Address");
-                lblEmail.ForeColor = System.Drawing.Color.Red;
+                divEmail.Attributes["class"] = "form-group has-error";
                 return false;
             }
 
@@ -136,8 +136,8 @@ namespace ZeroToProgrammer
             {
                 if (UsersTable.EmailExists(txtEmail.Text))
                 {
-                    MasterPage.SetError("This Username or Email address already exists");
-                    lblUsername.ForeColor = System.Drawing.Color.Red;
+                    MasterPage.SetError("Email address already exists");
+                    divEmail.Attributes["class"] = "form-group has-error";
                     return false;
                 }
             }
@@ -148,19 +148,33 @@ namespace ZeroToProgrammer
             }
 
             // First Name
+            if (string.IsNullOrWhiteSpace(txtFirstName.Text))
+            {
+                MasterPage.SetError("Enter a first name");
+                divFirstName.Attributes["class"] = "form-group has-error";
+                return false;
+            }
+
             Regex rgxNames = new Regex("[^A-Za-z]");
-            if (!string.IsNullOrEmpty(txtFirstName.Text) && rgxNames.IsMatch(txtFirstName.Text))
+            if (!string.IsNullOrWhiteSpace(txtFirstName.Text) && rgxNames.IsMatch(txtFirstName.Text))
             {
                 MasterPage.SetError("First Name must contain only letters");
-                lblFirstName.ForeColor = System.Drawing.Color.Red;
+                divFirstName.Attributes["class"] = "form-group has-error";
                 return false;
             }
 
             // Last Name
+            if (string.IsNullOrWhiteSpace(txtLastName.Text))
+            {
+                MasterPage.SetError("Enter a last name");
+                divLastName.Attributes["class"] = "form-group has-error";
+                return false;
+            }
+
             if (!string.IsNullOrEmpty(txtLastName.Text) && rgxNames.IsMatch(txtLastName.Text))
             {
                 MasterPage.SetError("Last Name must contain only letters");
-                lblLastName.ForeColor = System.Drawing.Color.Red;
+                divLastName.Attributes["class"] = "form-group has-error";
                 return false;
             }
 

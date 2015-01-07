@@ -46,21 +46,29 @@ namespace ZeroToProgrammer
 
             foreach (DataRow row in news.Rows)
             {
-                Panel panel = new Panel();
+                Panel outerDiv = new Panel();
+                outerDiv.CssClass = "row";
 
-                HtmlGenericControl header = new HtmlGenericControl("h2");
+                Panel innerDiv = new Panel();
+                innerDiv.CssClass = "col-lg-8";
+
+                HtmlGenericControl header = new HtmlGenericControl("h3");
                 header.InnerHtml = row["Title"].ToString();
-                panel.Controls.Add(header);
+                innerDiv.Controls.Add(header);
 
                 HtmlGenericControl date = new HtmlGenericControl("p");
-                date.InnerHtml = ((DateTime) row["ModifiedDate"]).ToString("M/d/yyyy");
-                panel.Controls.Add(date);
+                date.InnerHtml = ((DateTime)row["ModifiedDate"]).ToString("M/d/yyyy");
+                innerDiv.Controls.Add(date);
 
                 HtmlGenericControl body = new HtmlGenericControl("p");
                 body.InnerHtml = row["Content"].ToString();
-                panel.Controls.Add(body);
+                innerDiv.Controls.Add(body);
 
-                pnlNews.Controls.Add(panel);
+                HtmlGenericControl hr = new HtmlGenericControl("hr");
+                innerDiv.Controls.Add(hr);
+
+                outerDiv.Controls.Add(innerDiv);
+                pnlNews.Controls.Add(outerDiv);
             }
         }
     }

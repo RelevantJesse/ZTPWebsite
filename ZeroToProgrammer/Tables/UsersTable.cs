@@ -56,7 +56,7 @@ namespace ZeroToProgrammer.Tables
                 conn.Open();
 
                 SqlCommand cmd = new SqlCommand("SELECT COUNT(id) FROM Users " +
-                                                "WHERE email = @email ", conn);
+                                                "WHERE email = @email", conn);
                 cmd.Parameters.AddWithValue("@email", email);
 
                 return ((int)cmd.ExecuteScalar() >= 1);

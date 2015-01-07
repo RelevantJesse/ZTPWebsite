@@ -26,7 +26,7 @@ namespace ZeroToProgrammer.Tables
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT Title, Content, ModifiedDate FROM News", conn);
+                SqlCommand cmd = new SqlCommand("SELECT Title, Content, ModifiedDate FROM News ORDER BY CreatedDate DESC", conn);
                 
                 SqlDataReader reader = cmd.ExecuteReader();
                 DataTable news = new DataTable();
