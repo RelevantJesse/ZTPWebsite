@@ -24,7 +24,14 @@ namespace ZeroToProgrammer
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtUsername.Text) || string.IsNullOrWhiteSpace(txtUsername.Text))
+            {
+                MasterPage.SetError("User doesn't exist");
+                return;
+            }
+
             string passwordHash = UsersTable.GetUserPassword(txtUsername.Text);
+
             if (string.IsNullOrWhiteSpace(passwordHash))
             {
                 MasterPage.SetError("User doesn't exist");
